@@ -1,11 +1,18 @@
 # 这是一片南极区域的冰块
 
+# 存储map的html文件名 && 路径
+map_file_name = "ice-map.html"
+map_file_path = "./html-files"
+# 存储图片的名称
+pic_name = "ice-year-change"
+
 # 中心点(精度, 纬度) && 半径(m)
 center = [-67.4, -66.8]
 radius = 16000
 
 # 选择的年份
-years = [2005, 2010, 2015, 2020, 2024]
+years = [2002, 2006, 2010, 2014, 2018, 2022, 2024]
+# years = [2005, 2010, 2015, 2020, 2024]
 # 选择每年统计的起止日期
 start_date = "01-01"
 end_date = "12-31"
