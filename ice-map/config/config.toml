@@ -5,12 +5,8 @@ project_name = "ee-yxyhaha5"
 # 数据集名称
 dataset_name = "MODIS/061/MOD10A1"
 
-# 存储map的html文件名 && 路径
-map_file_name = "ice-map.html"
-map_file_path = "./html-files"
-
 # 日志输出级别设置
-log_level = "INFO"
+log_level = "DEBUG"
 
 # 雪盖阈值
 NDSI_threshold = 0
