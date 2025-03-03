@@ -1,0 +1,32 @@
+# google earth engine project name
+# 这里需要填写自己的 google earth engine 项目名称
+project_name = "ee-yxyhaha5"
+
+# 数据集名称
+dataset_name = "MODIS/061/MOD10A1"
+
+# 存储map的html文件名 && 路径
+map_file_name = "ice-map.html"
+map_file_path = "./html-files"
+
+# 日志输出级别设置
+log_level = "INFO"
+
+# 雪盖阈值
+NDSI_threshold = 0
+
+# 分辨率(m/pixel)
+resolution = 1000
+# 最大处理像素数
+max_pixels = 1e9
+
+## 地图底图
+# 标准街道地图: 'OpenStreetMap'
+# 浅色主题地图: 'CartoDB positron'
+# 深色主题地图: 'CartoDB dark_matter'
+# 地形图:      'Stamen Terrain'
+# 黑白地图:    'Stamen Toner'
+map_tiles = "CartoDB Positron"
+
+# 选择地点的配置文件
+region_config = "region1.toml"
