@@ -1,8 +1,12 @@
 # google earth engine project name
 # 这里需要填写自己的 google earth engine 项目名称
 project_name = "ee-yxyhaha5"
+# 实验ID
+experiment_id = 1
 
 # 数据集名称
+# MODIS/061/MOD10A1: 2020~2025, 500m
+# GLIMS/20230607: 
 dataset_name = "MODIS/061/MOD10A1"
 
 # 日志输出级别设置

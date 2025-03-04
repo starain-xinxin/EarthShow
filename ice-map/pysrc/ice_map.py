@@ -50,6 +50,7 @@ def config_parser():
 
 def earth_engine_init(config: dict):
     ee.Initialize(project=config["project_name"])
+    logger.info(f"Google Earth Engine init success, project name: {config['project_name']}")
 
 def get_snow_data(config: dict) -> dict:
     """
@@ -165,7 +166,7 @@ def create_map_html(snow_data: dict, config: dict):
     absolute_map_path = os.path.join(os.path.dirname(script_dir), map_file_path.strip('./'))
     os.makedirs(absolute_map_path, exist_ok=True)
     
-    output_path = os.path.join(absolute_map_path, map_file_name)
+    output_path = os.path.join(absolute_map_path, f"{config['experiment_id']}_{map_file_name}")
     ice_map.save(output_path)
     logger.info(f"地图已保存至 {output_path}")
 
@@ -258,7 +259,7 @@ def plot_ice_coverage_chart(snow_data: dict, config: dict):
     # 保存图片到pic目录
     pic_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pic")
     os.makedirs(pic_dir, exist_ok=True)
-    pic_path = os.path.join(pic_dir, f"{config['pic_name']}.png")
+    pic_path = os.path.join(pic_dir, f"{config['experiment_id']}_{config['pic_name']}.png")
     plt.savefig(pic_path, dpi=300, bbox_inches='tight', facecolor='white')
     logger.info(f"图片已保存至 {pic_path}")
     
