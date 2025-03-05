@@ -295,7 +295,7 @@ def plot_ch4_trend_chart(ch4_data: dict, config: dict):
     # 创建图表
     if config["region_type"] == "global":
         # 全球模式：创建两个子图
-        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 12), height_ratios=[1, 1.2])
+        fig, ax1 = plt.subplots(figsize=(12, 6))
     else:
         # 局部区域模式：只创建一个图
         fig, ax1 = plt.subplots(figsize=(12, 6))
@@ -351,63 +351,6 @@ def plot_ch4_trend_chart(ch4_data: dict, config: dict):
     
     ax1.legend(loc='upper right', fontsize=11)
     ax1.grid(True, linestyle='--', alpha=0.3, color='gray', zorder=0)
-    
-    # 如果是全球模式，添加热力图
-    if config["region_type"] == "global":
-        ax2.set_facecolor('#f0f0f0')
-        latest_year = max(valid_years)  # 使用有效数据的最新年份
-        grid_data = ch4_data[latest_year]['grid_stats']
-        
-        # 提取网格数据
-        lats = []
-        lons = []
-        values = []
-        for grid in grid_data:
-            # 直接获取ch4值，不需要转换为ee.Number
-            ch4_value = grid['ch4']
-            if ch4_value is not None:  # 只添加非None的值
-                lats.append(grid['lat'])
-                lons.append(grid['lon'])
-                values.append(ch4_value)
-        
-        if values:  # 只在有有效数据时绘制热力图
-            # 创建网格
-            grid_size = config.get("grid_size", 10)
-            lon_bins = np.arange(-180, 181, grid_size)
-            lat_bins = np.arange(-90, 91, grid_size)
-            
-            # 创建热力图数据
-            heat_data, _, _ = np.histogram2d(lats, lons, bins=[lat_bins, lon_bins], weights=values)
-            heat_data = heat_data.T
-            
-            # 绘制热力图
-            im = ax2.imshow(heat_data, 
-                          extent=[-180, 180, -90, 90],
-                          aspect='auto',
-                          cmap='RdYlBu_r',
-                          interpolation='nearest')
-            
-            # 添加颜色条
-            cbar = plt.colorbar(im, ax=ax2)
-            cbar.set_label('CH4浓度 (ppb)', fontsize=12)
-            
-            # 设置标题和标签
-            ax2.set_title(f'{latest_year}年全球CH4浓度分布', fontsize=16, pad=20, fontweight='bold')
-            ax2.set_xlabel('经度', fontsize=12, labelpad=10)
-            ax2.set_ylabel('纬度', fontsize=12, labelpad=10)
-            
-            # 添加采样点标记
-            ax2.scatter(lons, lats, c='red', s=50, alpha=0.6, label='采样点')
-            ax2.legend(loc='upper right')
-        else:
-            logger.warning(f"{latest_year}年没有有效的网格数据，跳过热力图绘制")
-            ax2.text(0.5, 0.5, '无有效数据可供显示',
-                    ha='center', va='center',
-                    transform=ax2.transAxes,
-                    fontsize=14)
-    
-    # 调整布局
-    plt.tight_layout()
     
     # 保存图片
     pic_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pic")
