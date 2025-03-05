@@ -1,3 +1,10 @@
+## 需要更改的有如下配置参数：
+# - project_name
+# - region_config
+# - map_file_name
+# - pic_name
+# - experiment_id
+
 # google earth engine project name
 project_name = "ee-yxyhaha5"
 
@@ -8,7 +15,7 @@ dataset_name = "COPERNICUS/S5P/OFFL/L3_CH4"
 # 可选值：
 # - "global": 全球统计
 # - "local": 局部区域统计
-region_type = "global"
+region_type = "local"
 
 # 区域配置文件
 # 如果 region_type = "global"，使用 region_global.toml
@@ -16,14 +23,14 @@ region_type = "global"
 region_config = "region1.toml"
 
 # 存储map的html文件名 && 路径
-map_file_name = "全球CH4浓度.html"
+map_file_name = "北京CH4浓度.html"
 map_file_path = "./html-files"
 
 # 图表文件名
-pic_name = "全球CH4浓度-年际变化"
+pic_name = "北京CH4浓度-年际变化"
 
 # 实验ID（用于文件命名）
-experiment_id = "CH4_101"
+experiment_id = "CH4_001"
 
 # 日志输出级别设置
 log_level = "INFO"
