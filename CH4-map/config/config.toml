@@ -1,0 +1,46 @@
+# google earth engine project name
+project_name = "ee-yxyhaha5"
+
+# 数据集名称 (Sentinel-5P OFFL CH4)
+dataset_name = "COPERNICUS/S5P/OFFL/L3_CH4"
+
+# 区域类型选择
+# 可选值：
+# - "global": 全球统计
+# - "local": 局部区域统计
+region_type = "global"
+
+# 区域配置文件
+# 如果 region_type = "global"，使用 region_global.toml
+# 如果 region_type = "local"，使用 region_config
+region_config = "region1.toml"
+
+# 存储map的html文件名 && 路径
+map_file_name = "全球CH4浓度.html"
+map_file_path = "./html-files"
+
+# 图表文件名
+pic_name = "全球CH4浓度-年际变化"
+
+# 实验ID（用于文件命名）
+experiment_id = "CH4_101"
+
+# 日志输出级别设置
+log_level = "INFO"
+
+# CH4浓度阈值（单位：ppb, 十亿分之一）
+# 正常大气中CH4浓度约为1700ppb
+ch4_threshold = 1700
+
+# 分辨率(m/pixel)
+resolution = 1000
+# 最大处理像素数
+max_pixels = 1e9
+
+## 地图底图
+# 标准街道地图: 'OpenStreetMap'
+# 浅色主题地图: 'CartoDB positron'
+# 深色主题地图: 'CartoDB dark_matter'
+# 地形图:      'Stamen Terrain'
+# 黑白地图:    'Stamen Toner'
+map_tiles = "CartoDB Positron" 
