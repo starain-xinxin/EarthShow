@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ad74a1d8e3b4b7120470b147dd167ba8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ad74a1d8e3b4b7120470b147dd167ba8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ad74a1d8e3b4b7120470b147dd167ba8 = L.map(
+                "map_ad74a1d8e3b4b7120470b147dd167ba8",
+                {
+                    center: [-67.4, -66.8],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cc3c3e9f39cb0483581736396783a80d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cc3c3e9f39cb0483581736396783a80d.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_c66694f37f00988f0447fa79ad288d24 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/ef340fd4e7d94561dd257bd22c93389e-6b8a0e8f8823a549f47dee5ebb6e04f5/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2002",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c66694f37f00988f0447fa79ad288d24.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_915fdeccbf642fedd524e5969c92cf04 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/f0ba235259d21d76daea22f13286fa90-44e4dc916799f28ac8e07344bf924f66/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2006",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_915fdeccbf642fedd524e5969c92cf04.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_a0d97d0d85a62ecca7bb7d6e93ea949e = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/561b5cfde48a92dbce128a880a940b80-7e63f3683f75e4502218b002c8605aa2/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2010",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a0d97d0d85a62ecca7bb7d6e93ea949e.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_fbfe8a929098d5dc423644eb375477ba = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/e6e2cf7fe367d2431ff10a05379063f7-39f5d4525abca827f9648be20d918b16/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2014",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fbfe8a929098d5dc423644eb375477ba.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_e207fb41ebb102ddce481e3e2e79bb9a = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/1778c328bb89fe2779114bf3d17e5174-bb778fac095178b17fafdd344d062f85/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2018",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e207fb41ebb102ddce481e3e2e79bb9a.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_01462bd86729b3bf7f27d50dc96be1aa = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/64edee73f94f388b9f7cf6afc3a6b57a-99ad44140133aec3441a4319fd42575b/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2022",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_01462bd86729b3bf7f27d50dc96be1aa.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var tile_layer_636383393406965b51ea5cc068171b79 = L.tileLayer(
+                "https://earthengine.googleapis.com/v1/projects/ee-yxyhaha5/maps/62c00c43f0c91ca1a21d484706fc1a7e-974e03637c45eedc2782ba5da42625ae/tiles/{z}/{x}/{y}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google Earth Engine - MODIS Snow Cover 2024",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_636383393406965b51ea5cc068171b79.addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+            var circle_ab9b07dca8c9d00e02adb9952e6b78e2 = L.circle(
+                [-66.8, -67.4],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16000, "stroke": true, "weight": 2}
+            ).addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+        
+    
+        var popup_929f1cb76ac84a620d9e04e66183b134 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96f3e680d3ecea243dc435d11d390873 = $(`<div id="html_96f3e680d3ecea243dc435d11d390873" style="width: 100.0%; height: 100.0%;">研究区域 (半径: 16.0公里)</div>`)[0];
+                popup_929f1cb76ac84a620d9e04e66183b134.setContent(html_96f3e680d3ecea243dc435d11d390873);
+            
+        
+
+        circle_ab9b07dca8c9d00e02adb9952e6b78e2.bindPopup(popup_929f1cb76ac84a620d9e04e66183b134)
+        ;
+
+        
+    
+    
+            var layer_control_391da45301577222b83713c34c463029_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_cc3c3e9f39cb0483581736396783a80d,
+                },
+                overlays :  {
+                    "\u5e74\u4efd 2002" : tile_layer_c66694f37f00988f0447fa79ad288d24,
+                    "\u5e74\u4efd 2006" : tile_layer_915fdeccbf642fedd524e5969c92cf04,
+                    "\u5e74\u4efd 2010" : tile_layer_a0d97d0d85a62ecca7bb7d6e93ea949e,
+                    "\u5e74\u4efd 2014" : tile_layer_fbfe8a929098d5dc423644eb375477ba,
+                    "\u5e74\u4efd 2018" : tile_layer_e207fb41ebb102ddce481e3e2e79bb9a,
+                    "\u5e74\u4efd 2022" : tile_layer_01462bd86729b3bf7f27d50dc96be1aa,
+                    "\u5e74\u4efd 2024" : tile_layer_636383393406965b51ea5cc068171b79,
+                },
+            };
+            let layer_control_391da45301577222b83713c34c463029 = L.control.layers(
+                layer_control_391da45301577222b83713c34c463029_layers.base_layers,
+                layer_control_391da45301577222b83713c34c463029_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_ad74a1d8e3b4b7120470b147dd167ba8);
+
+        
+</script>
+</html>
